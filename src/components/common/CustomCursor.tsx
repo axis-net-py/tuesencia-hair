@@ -19,14 +19,13 @@ export default function CustomCursor() {
       setMousePosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
 
-      // Check if hovering interactive element with custom cursor label
       const target = e.target as HTMLElement;
       const interactiveEl = target.closest("[data-cursor]");
       if (interactiveEl) {
         const text = interactiveEl.getAttribute("data-cursor") || "";
         setCursorText(text);
         setIsHovered(true);
-      } else if (target.closest("button, a, input, [role='button']")) {
+      } else if (target.closest("button, a, input, select, textarea, [role='button']")) {
         setCursorText("");
         setIsHovered(true);
       } else {
@@ -55,35 +54,35 @@ export default function CustomCursor() {
     <>
       {/* Precision center dot */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-[#dfc18c] mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-[#8C6A32]"
         animate={{
           x: mousePosition.x - 3,
           y: mousePosition.y - 3,
           width: isHovered ? 0 : 6,
           height: isHovered ? 0 : 6,
-          opacity: isHovered ? 0 : 1,
+          opacity: isHovered ? 0 : 0.8,
         }}
         transition={{ type: "spring", stiffness: 800, damping: 35 }}
       />
 
       {/* Dynamic outer ring / label bubble */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] flex items-center justify-center rounded-full border border-[#dfc18c]/60 backdrop-blur-[2px]"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] flex items-center justify-center rounded-full border border-[#8C6A32]/40 backdrop-blur-[1px]"
         animate={{
-          x: mousePosition.x - (cursorText ? 40 : isHovered ? 24 : 16),
-          y: mousePosition.y - (cursorText ? 40 : isHovered ? 24 : 16),
-          width: cursorText ? 80 : isHovered ? 48 : 32,
-          height: cursorText ? 80 : isHovered ? 48 : 32,
+          x: mousePosition.x - (cursorText ? 42 : isHovered ? 24 : 16),
+          y: mousePosition.y - (cursorText ? 42 : isHovered ? 24 : 16),
+          width: cursorText ? 84 : isHovered ? 48 : 32,
+          height: cursorText ? 84 : isHovered ? 48 : 32,
           backgroundColor: cursorText
-            ? "rgba(223, 193, 140, 0.9)"
+            ? "rgba(28, 24, 21, 0.92)"
             : isHovered
-            ? "rgba(223, 193, 140, 0.15)"
-            : "rgba(223, 193, 140, 0.05)",
+            ? "rgba(184, 147, 88, 0.12)"
+            : "rgba(184, 147, 88, 0.04)",
         }}
         transition={{ type: "spring", stiffness: 400, damping: 28 }}
       >
         {cursorText && (
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#0a0908] select-none">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-[#FAF8F5] select-none">
             {cursorText}
           </span>
         )}

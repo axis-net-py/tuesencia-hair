@@ -328,3 +328,4 @@ export const PHILOSOPHY_PILLARS = [
       "El tiempo es tu mayor lujo. Cuidamos cada estímulo: aromas botánicos calmantes, infusiones herbales exclusivas y un ambiente donde puedes desconectar del ruido exterior."
   }
 ];
+

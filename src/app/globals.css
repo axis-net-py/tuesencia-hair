@@ -2,19 +2,20 @@
 
 @layer base {
   :root {
-    --bg-dark: #0a0908;
-    --bg-card: #121110;
-    --bg-card-hover: #1a1816;
-    --gold: #dfc18c;
-    --gold-light: #f5e4c3;
-    --gold-dim: #9b7e51;
-    --nude: #e6d7cc;
-    --nude-soft: #f2ebe5;
-    --sand: #c9b9a6;
-    --text-primary: #f8f6f0;
-    --text-muted: #9e978e;
-    --border-subtle: rgba(223, 193, 140, 0.14);
-    --border-highlight: rgba(223, 193, 140, 0.35);
+    --bg-light: #FAF8F5;
+    --bg-card: #FFFFFF;
+    --bg-card-subtle: #F5EFEB;
+    --bg-card-hover: #F0E8DF;
+    --gold: #B89358;
+    --gold-light: #DFCA9F;
+    --gold-dark: #8C6A32;
+    --nude: #E8D8CD;
+    --sand: #D9C8B6;
+    --text-primary: #1C1815;
+    --text-secondary: #524A43;
+    --text-muted: #7E746C;
+    --border-subtle: rgba(184, 147, 88, 0.22);
+    --border-highlight: rgba(184, 147, 88, 0.45);
   }
 
   * {
@@ -28,40 +29,40 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     color: var(--text-primary);
   }
 
   body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     color: var(--text-primary);
     overflow-x: hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Custom luxury scrollbar */
+  /* Custom luxury warm scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0908;
+    background: #FAF8F5;
   }
   ::-webkit-scrollbar-thumb {
-    background: #332d27;
+    background: #D9C8B6;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #dfc18c;
+    background: #B89358;
   }
 }
 
-/* Subtle editorial film grain overlay */
+/* Subtle editorial linen texture overlay */
 .bg-grain {
-  background-image: radial-gradient(rgba(223, 193, 140, 0.04) 1px, transparent 0);
+  background-image: radial-gradient(rgba(184, 147, 88, 0.08) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
-/* Text Shimmer Effect */
+/* Text Shimmer Effect for Light Theme (Rich Bronze to Champagne) */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -74,10 +75,10 @@
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    #dfc18c 0%,
-    #ffffff 25%,
-    #dfc18c 50%,
-    #dfc18c 100%
+    #8C6A32 0%,
+    #C5A880 25%,
+    #1C1815 50%,
+    #8C6A32 100%
   );
   background-size: 200% auto;
   color: transparent;

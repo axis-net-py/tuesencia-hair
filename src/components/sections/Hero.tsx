@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Sparkles, ArrowDownRight, Compass, ShieldCheck } from "lucide-react";
-import { SALON_DATA } from "@/lib/constants";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 interface HeroProps {
@@ -12,25 +11,25 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
-    <section className="relative min-h-[94vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0a0908]">
-      {/* Editorial subtle background glows & atmospheric lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(223,193,140,0.12)_0%,rgba(10,9,8,0)_70%)] pointer-events-none blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(200,138,88,0.08)_0%,rgba(10,9,8,0)_70%)] pointer-events-none blur-3xl" />
+    <section className="relative min-h-[94vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#FAF8F5]">
+      {/* Editorial subtle warm champagne ambient glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[550px] bg-[radial-gradient(ellipse_at_center,rgba(223,193,140,0.25)_0%,rgba(250,248,245,0)_70%)] pointer-events-none blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(232,216,205,0.35)_0%,rgba(250,248,245,0)_70%)] pointer-events-none blur-3xl" />
 
-      {/* Top subtle status pills */}
+      {/* Top status pills */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8"
       >
-        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#dfc18c]/30 bg-[#121110]/80 text-[11px] font-mono tracking-widest text-[#dfc18c] uppercase backdrop-blur-md">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#dfc18c] animate-ping" />
+        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#D9C8B6] bg-[#FFFFFF]/90 text-[11px] font-mono tracking-widest text-[#8C6A32] uppercase backdrop-blur-md shadow-xs">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#8C6A32] animate-ping" />
           ATELIER EN KATUETÉ, PARAGUAY 🇵🇾
         </span>
 
-        <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-[11px] font-mono tracking-widest text-[#c9b9a6] uppercase">
-          <ShieldCheck className="w-3 h-3 text-[#dfc18c]" />
+        <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D9C8B6] bg-[#FFFFFF]/90 text-[11px] font-mono tracking-widest text-[#524A43] uppercase shadow-xs">
+          <ShieldCheck className="w-3 h-3 text-[#8C6A32]" />
           5 AÑOS DE EXCELENCIA
         </span>
       </motion.div>
@@ -41,7 +40,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xs sm:text-sm md:text-base font-mono tracking-[0.35em] text-[#dfc18c] uppercase mb-4"
+          className="text-xs sm:text-sm font-mono tracking-[0.35em] text-[#8C6A32] uppercase mb-4 font-semibold"
         >
           ESPACIO DE BELLEZA & VISAGISMO · CAMILA BESSING
         </motion.p>
@@ -50,7 +49,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="font-[family-name:var(--font-serif)] text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.04] font-normal text-[#f8f6f0] mb-6"
+          className="font-[family-name:var(--font-serif)] text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] font-normal text-[#1C1815] mb-6"
         >
           La belleza no se impone,{" "}
           <span className="italic font-light text-shimmer">tu esencia se revela.</span>
@@ -60,10 +59,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#9e978e] font-light leading-relaxed mb-10"
+          className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#524A43] font-light leading-relaxed mb-10"
         >
           Lejos de los salones convencionales y las tendencias pasajeras. En{" "}
-          <span className="text-[#f8f6f0] font-medium">Tu Esencia</span> diseñamos
+          <strong className="text-[#1C1815] font-semibold">Tu Esencia</strong> diseñamos
           arquitectura capilar personalizada, balayage de alta costura y terapias botánicas
           concebidas para armonizar con tu propia identidad.
         </motion.p>
@@ -77,17 +76,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         >
           <a
             href="#diagnostico"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#dfc18c] hover:bg-[#f5e4c3] text-[#0a0908] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_0_30px_rgba(223,193,140,0.35)] hover:shadow-[0_0_40px_rgba(223,193,140,0.6)] cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#1C1815] hover:bg-[#8C6A32] text-[#FAF8F5] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(28,24,21,0.15)] hover:shadow-[0_6px_25px_rgba(140,106,50,0.3)] cursor-pointer"
           >
-            <Compass className="w-4 h-4" />
+            <Compass className="w-4 h-4 text-[#DFCA9F]" />
             Descubrir Mi Diagnóstico (60s)
           </a>
 
           <MagneticButton
             onClick={onOpenBooking}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full border border-[#dfc18c]/40 bg-[#141312] hover:bg-[#1a1816] text-[#f8f6f0] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:border-[#dfc18c]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full border border-[#C5A880] bg-[#FFFFFF] hover:bg-[#F5EFEB] text-[#1C1815] font-semibold text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-xs"
           >
-            <Sparkles className="w-4 h-4 text-[#dfc18c]" />
+            <Sparkles className="w-4 h-4 text-[#8C6A32]" />
             Agendar con Camila
           </MagneticButton>
         </motion.div>
@@ -124,22 +123,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="group relative h-48 sm:h-64 rounded-xl overflow-hidden border border-[rgba(223,193,140,0.15)] bg-[#121110] transition-all duration-500 hover:border-[#dfc18c]/60"
+            className="group relative h-48 sm:h-64 rounded-xl overflow-hidden border border-[#EADDCF] bg-[#FFFFFF] transition-all duration-500 hover:border-[#B89358] shadow-[0_4px_20px_rgba(28,24,21,0.06)] hover:shadow-[0_8px_30px_rgba(184,147,88,0.15)]"
             data-cursor="DESCUBRIR"
           >
             <Image
               src={item.img}
               alt={item.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-90"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 25vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-[#0a0908]/30 to-transparent" />
+            {/* Scrim for contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/90 via-[#1C1815]/30 to-transparent" />
             <div className="absolute bottom-3 left-3 right-3 text-left">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#dfc18c]">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#DFCA9F] block">
                 {item.tag}
               </span>
-              <h4 className="font-[family-name:var(--font-serif)] text-sm sm:text-base text-[#f8f6f0] font-medium leading-tight">
+              <h4 className="font-[family-name:var(--font-serif)] text-sm sm:text-base text-[#FAF8F5] font-medium leading-tight">
                 {item.title}
               </h4>
             </div>
@@ -154,10 +154,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         transition={{ delay: 1.2, duration: 1 }}
         className="mt-12 flex flex-col items-center gap-2 text-center"
       >
-        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#6b655f]">
+        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#7E746C]">
           DESLIZA PARA CONOCER NUESTRA ESENCIA
         </span>
-        <ArrowDownRight className="w-4 h-4 text-[#dfc18c] animate-bounce" />
+        <ArrowDownRight className="w-4 h-4 text-[#8C6A32] animate-bounce" />
       </motion.div>
     </section>
   );

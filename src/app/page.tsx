@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <SmoothScrollProvider>
-      <div className="relative min-h-screen bg-[#0a0908] text-[#f8f6f0] selection:bg-[#dfc18c] selection:text-[#0a0908]">
+      <div className="relative min-h-screen bg-[#FAF8F5] text-[#1C1815] selection:bg-[#B89358] selection:text-[#FAF8F5]">
         {/* Dynamic Custom Cursor */}
         <CustomCursor />
 

@@ -18,11 +18,11 @@ export default function AmbienceSound({ className }: { className?: string }) {
 
       const masterGain = ctx.createGain();
       masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
-      masterGain.gain.exponentialRampToValueAtTime(0.04, ctx.currentTime + 2); // very subtle background
+      masterGain.gain.exponentialRampToValueAtTime(0.035, ctx.currentTime + 2); // very gentle background
       masterGain.connect(ctx.destination);
       gainNodeRef.current = masterGain;
 
-      // Soft harmonic frequencies (E4, B4, G#4 chord with low warmth)
+      // Soft harmonic frequencies (E4, B4, G#4 chord with warm low drone)
       const frequencies = [164.81, 246.94, 329.63, 415.30];
       const oscillators: OscillatorNode[] = [];
 
@@ -98,27 +98,27 @@ export default function AmbienceSound({ className }: { className?: string }) {
       onClick={toggleSound}
       title={isPlaying ? "Desactivar atmósfera sonora" : "Activar atmósfera sensorial (Audio Spa)"}
       className={cn(
-        "relative flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs tracking-wider transition-all duration-300 backdrop-blur-md",
+        "relative flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs tracking-wider transition-all duration-300 backdrop-blur-md cursor-pointer select-none whitespace-nowrap",
         isPlaying
-          ? "border-[#dfc18c] bg-[#dfc18c]/15 text-[#dfc18c] shadow-[0_0_15px_rgba(223,193,140,0.25)]"
-          : "border-[rgba(223,193,140,0.2)] bg-[#121110]/80 text-[#9e978e] hover:text-[#f8f6f0] hover:border-[#dfc18c]/50",
+          ? "border-[#B89358] bg-[#FAF2E6] text-[#8C6A32] shadow-[0_2px_12px_rgba(184,147,88,0.2)]"
+          : "border-[#D9C8B6] bg-[#FFFFFF]/80 text-[#524A43] hover:text-[#1C1815] hover:border-[#B89358]",
         className
       )}
     >
       {isPlaying ? (
         <>
-          <Volume2 className="w-3.5 h-3.5 text-[#dfc18c] animate-pulse" />
-          <span className="hidden sm:inline font-mono text-[11px]">SONIDO ATELIER : ON</span>
+          <Volume2 className="w-3.5 h-3.5 text-[#8C6A32] animate-pulse" />
+          <span className="hidden xl:inline font-mono text-[10.5px]">SONIDO ATELIER : ON</span>
           <span className="flex gap-0.5 items-end h-2.5">
-            <span className="w-0.5 h-full bg-[#dfc18c] animate-bounce" style={{ animationDelay: "0ms" }} />
-            <span className="w-0.5 h-2/3 bg-[#dfc18c] animate-bounce" style={{ animationDelay: "150ms" }} />
-            <span className="w-0.5 h-3/4 bg-[#dfc18c] animate-bounce" style={{ animationDelay: "300ms" }} />
+            <span className="w-0.5 h-full bg-[#8C6A32] animate-bounce" style={{ animationDelay: "0ms" }} />
+            <span className="w-0.5 h-2/3 bg-[#8C6A32] animate-bounce" style={{ animationDelay: "150ms" }} />
+            <span className="w-0.5 h-3/4 bg-[#8C6A32] animate-bounce" style={{ animationDelay: "300ms" }} />
           </span>
         </>
       ) : (
         <>
-          <VolumeX className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline font-mono text-[11px]">ATMÓSFERA SENSORIAL</span>
+          <VolumeX className="w-3.5 h-3.5 text-[#7E746C]" />
+          <span className="hidden xl:inline font-mono text-[10.5px]">ATMÓSFERA SENSORIAL</span>
         </>
       )}
     </button>
