@@ -14,20 +14,20 @@ export default function LogoMedallion({
   className,
 }: LogoMedallionProps) {
   const sizeMap = {
-    sm: { img: 36, container: "w-9 h-9", textClass: "text-xs" },
-    md: { img: 46, container: "w-11 h-11", textClass: "text-sm" },
-    lg: { img: 72, container: "w-18 h-18", textClass: "text-base" },
-    xl: { img: 104, container: "w-26 h-26", textClass: "text-lg" },
+    sm: { img: 40, container: "w-10 h-10", textClass: "text-sm", subClass: "text-[10.5px]" },
+    md: { img: 50, container: "w-12 h-12", textClass: "text-base sm:text-lg", subClass: "text-[11px] sm:text-xs" },
+    lg: { img: 76, container: "w-20 h-20", textClass: "text-xl", subClass: "text-xs" },
+    xl: { img: 110, container: "w-28 h-28", textClass: "text-2xl", subClass: "text-sm" },
   };
 
   const currentSize = sizeMap[size];
 
   return (
-    <div className={cn("inline-flex items-center gap-3 group select-none", className)}>
+    <div className={cn("inline-flex items-center gap-3.5 group select-none", className)}>
       {/* Authentic Original Instagram Logo with soft luxury bezel */}
       <div
         className={cn(
-          "relative rounded-full overflow-hidden border border-[#C5A880]/60 bg-[#E8D8CD] shadow-[0_2px_12px_rgba(184,147,88,0.18)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#8C6A32]",
+          "relative rounded-full overflow-hidden border-2 border-[#C5A880]/70 bg-[#E8D8CD] shadow-[0_2px_14px_rgba(184,147,88,0.22)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#8C6A32] shrink-0",
           currentSize.container
         )}
       >
@@ -43,11 +43,21 @@ export default function LogoMedallion({
       </div>
 
       {showText && (
-        <div className="flex flex-col text-left leading-none">
-          <span className="font-[family-name:var(--font-serif)] tracking-[0.22em] text-[#1C1815] font-semibold uppercase leading-tight group-hover:text-[#8C6A32] transition-colors duration-200">
+        <div className="flex flex-col text-left">
+          <span
+            className={cn(
+              "font-[family-name:var(--font-serif)] tracking-[0.2em] text-[#1C1815] font-bold uppercase leading-tight group-hover:text-[#8C6A32] transition-colors duration-200",
+              currentSize.textClass
+            )}
+          >
             TU ESENCIA
           </span>
-          <span className="text-[9.5px] sm:text-[10px] tracking-[0.28em] text-[#8C6A32] font-semibold uppercase leading-tight mt-0.5">
+          <span
+            className={cn(
+              "tracking-[0.25em] text-[#8C6A32] font-semibold uppercase leading-tight mt-0.5",
+              currentSize.subClass
+            )}
+          >
             ESPACIO DE BELLEZA
           </span>
         </div>

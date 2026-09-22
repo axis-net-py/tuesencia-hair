@@ -38,15 +38,15 @@ export default function InstagramFeed() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] border-t border-[#EADDCF] relative">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] border-t border-[#EADDCF] relative">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-12">
           <div className="text-center sm:text-left">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8C6A32] block mb-1 font-semibold">
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[#8C6A32] block mb-2 font-bold">
               COMUNIDAD & ACTUALIDAD
             </span>
-            <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl text-[#1C1815] font-normal">
+            <h3 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl md:text-5xl text-[#1C1815] font-normal">
               Sigue el día a día en {SALON_DATA.instagramHandle}
             </h3>
           </div>
@@ -55,23 +55,23 @@ export default function InstagramFeed() {
             href={SALON_DATA.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D9C8B6] bg-[#FFFFFF] text-xs font-mono uppercase tracking-widest text-[#1C1815] hover:border-[#8C6A32] hover:bg-[#FAF2E6] hover:text-[#8C6A32] transition-all duration-300 shadow-xs"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-[#D9C8B6] bg-[#FFFFFF] text-xs sm:text-sm font-mono uppercase tracking-widest text-[#1C1815] hover:border-[#8C6A32] hover:bg-[#FAF2E6] hover:text-[#8C6A32] transition-all duration-300 shadow-xs font-bold shrink-0"
           >
             <InstagramIcon className="w-4 h-4 text-[#8C6A32]" />
             <span>Seguir en Instagram</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
 
         {/* 6 Grid items */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4">
           {posts.map((p, idx) => (
             <a
               key={idx}
               href={SALON_DATA.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square rounded-xl overflow-hidden border border-[#EADDCF] bg-[#FFFFFF] shadow-xs"
+              className="group relative aspect-square rounded-2xl overflow-hidden border border-[#EADDCF] bg-[#FFFFFF] shadow-xs"
               data-cursor="INSTAGRAM"
             >
               <Image
@@ -81,13 +81,13 @@ export default function InstagramFeed() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
               />
-              <div className="absolute inset-0 bg-[#1C1815]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 text-white text-xs font-mono">
+              <div className="absolute inset-0 bg-[#1C1815]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 text-white text-xs sm:text-sm font-mono font-bold">
                 <span className="flex items-center gap-1">
-                  <Heart className="w-3.5 h-3.5 fill-white" />
+                  <Heart className="w-4 h-4 fill-white" />
                   {p.likes}
                 </span>
                 <span className="flex items-center gap-1">
-                  <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                  <MessageCircle className="w-4 h-4 fill-white" />
                   {p.comments}
                 </span>
               </div>

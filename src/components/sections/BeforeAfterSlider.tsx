@@ -27,24 +27,24 @@ export default function BeforeAfterSlider() {
   };
 
   return (
-    <section id="antes-despues" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F5EFEB] relative">
+    <section id="antes-despues" className="py-28 px-4 sm:px-6 lg:px-8 bg-[#F5EFEB] relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#8C6A32] block mb-2 font-semibold">
+        <div className="text-center mb-14">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#8C6A32] block mb-3 font-bold">
             METAMORFOSIS VISUAL
           </span>
-          <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-5xl text-[#1C1815] font-normal mb-4">
+          <h2 className="font-[family-name:var(--font-serif)] text-4xl sm:text-6xl text-[#1C1815] font-normal mb-5">
             Transformaciones Reales
           </h2>
-          <p className="max-w-xl mx-auto text-xs sm:text-sm text-[#524A43]">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-[#4A433D] font-normal leading-relaxed">
             Desliza para revelar la transición de una fibra castigada y apagada hacia una
             iluminación tridimensional con salud molecular intacta.
           </p>
         </div>
 
         {/* Interactive Comparison Stage */}
-        <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden border border-[#D9C8B6] shadow-[0_15px_50px_rgba(28,24,21,0.08)] select-none">
+        <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden border-2 border-[#D9C8B6] shadow-[0_20px_60px_rgba(28,24,21,0.1)] select-none">
           <div
             ref={containerRef}
             onMouseDown={() => setIsDragging(true)}
@@ -52,7 +52,7 @@ export default function BeforeAfterSlider() {
             onMouseLeave={() => setIsDragging(false)}
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
-            className="relative w-full h-[380px] sm:h-[520px] md:h-[580px] cursor-ew-resize overflow-hidden"
+            className="relative w-full h-[400px] sm:h-[540px] md:h-[620px] cursor-ew-resize overflow-hidden"
           >
             {/* "DESPUÉS" Image (Full background) */}
             <div className="absolute inset-0">
@@ -63,7 +63,7 @@ export default function BeforeAfterSlider() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-6 right-6 z-10 px-4 py-1.5 rounded-full bg-[#1C1815]/85 backdrop-blur-md border border-[#DFCA9F]/60 text-xs font-mono tracking-widest text-[#FAF8F5] uppercase">
+              <div className="absolute bottom-6 right-6 z-10 px-5 py-2 rounded-full bg-[#1C1815]/90 backdrop-blur-md border border-[#DFCA9F]/70 text-xs sm:text-sm font-mono tracking-widest text-[#FAF8F5] uppercase font-bold">
                 DESPUÉS · BALAYAGE HAUTE COUTURE
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function BeforeAfterSlider() {
                   className="object-cover filter grayscale contrast-125 brightness-90"
                   priority
                 />
-                <div className="absolute bottom-6 left-6 z-10 px-4 py-1.5 rounded-full bg-[#1C1815]/85 backdrop-blur-md border border-white/20 text-xs font-mono tracking-widest text-[#D9C8B6] uppercase">
+                <div className="absolute bottom-6 left-6 z-10 px-5 py-2 rounded-full bg-[#1C1815]/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-mono tracking-widest text-[#D9C8B6] uppercase font-bold">
                   ANTES · TONO OPACO & DESHIDRATADO
                 </div>
               </div>
@@ -89,41 +89,41 @@ export default function BeforeAfterSlider() {
 
             {/* Draggable Divider Line & Knob */}
             <div
-              className="absolute top-0 bottom-0 z-20 w-0.5 bg-gradient-to-b from-transparent via-[#8C6A32] to-transparent shadow-[0_0_12px_rgba(140,106,50,0.6)] pointer-events-none"
+              className="absolute top-0 bottom-0 z-20 w-1 bg-gradient-to-b from-transparent via-[#8C6A32] to-transparent shadow-[0_0_15px_rgba(140,106,50,0.7)] pointer-events-none"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#FAF8F5] border-2 border-[#8C6A32] flex items-center justify-center text-[#8C6A32] shadow-[0_2px_15px_rgba(28,24,21,0.2)]">
-                <MoveHorizontal className="w-4 h-4" />
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#FAF8F5] border-2 border-[#8C6A32] flex items-center justify-center text-[#8C6A32] shadow-[0_4px_20px_rgba(28,24,21,0.25)]">
+                <MoveHorizontal className="w-5 h-5" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Technical Transformation Details */}
-        <div className="mt-8 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div className="p-4 rounded-xl border border-[#EADDCF] bg-[#FFFFFF] shadow-xs">
-            <span className="text-[10px] font-mono uppercase text-[#8C6A32] tracking-widest block mb-1 font-semibold">
+        <div className="mt-10 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 text-center">
+          <div className="p-5 rounded-2xl border border-[#EADDCF] bg-[#FFFFFF] shadow-sm">
+            <span className="text-xs font-mono uppercase text-[#8C6A32] tracking-wider block mb-1.5 font-bold">
               PROTOCOLO APLICADO
             </span>
-            <p className="text-xs font-semibold text-[#1C1815]">
-              Babylights Micro-costura + Plex de Protección
+            <p className="text-sm sm:text-base font-bold text-[#1C1815]">
+              Babylights Micro-costura + Plex
             </p>
           </div>
 
-          <div className="p-4 rounded-xl border border-[#EADDCF] bg-[#FFFFFF] shadow-xs">
-            <span className="text-[10px] font-mono uppercase text-[#8C6A32] tracking-widest block mb-1 font-semibold">
+          <div className="p-5 rounded-2xl border border-[#EADDCF] bg-[#FFFFFF] shadow-sm">
+            <span className="text-xs font-mono uppercase text-[#8C6A32] tracking-wider block mb-1.5 font-bold">
               TIEMPO DE EJECUCIÓN
             </span>
-            <p className="text-xs font-semibold text-[#1C1815]">
+            <p className="text-sm sm:text-base font-bold text-[#1C1815]">
               3 Horas y 45 Minutos
             </p>
           </div>
 
-          <div className="p-4 rounded-xl border border-[#EADDCF] bg-[#FFFFFF] shadow-xs">
-            <span className="text-[10px] font-mono uppercase text-[#8C6A32] tracking-widest block mb-1 font-semibold">
+          <div className="p-5 rounded-2xl border border-[#EADDCF] bg-[#FFFFFF] shadow-sm">
+            <span className="text-xs font-mono uppercase text-[#8C6A32] tracking-wider block mb-1.5 font-bold">
               MASTER COLORISTA
             </span>
-            <p className="text-xs font-semibold text-[#1C1815]">
+            <p className="text-sm sm:text-base font-bold text-[#1C1815]">
               Camila Bessing (Katueté, PY)
             </p>
           </div>
